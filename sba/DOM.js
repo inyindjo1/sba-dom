@@ -38,5 +38,12 @@ alert(`Thank you for donating $${amount} to ${charity}!`)
 updateSummary()
 form.rest ()
 })
-
+clearBtn.addEventListener('click',function (){
+    if (confirm("Are you sure want to clear all donation ?")){
+        donations = {}
+        localStorage.removeItem('donations')
+        
+    }
+}) 
+updateSummary()
 
