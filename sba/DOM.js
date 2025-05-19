@@ -26,13 +26,12 @@ form.addEventListener('submit',function (e) {
         alert("please enter a valid charity and donation amount")
         return;
     }
-    // new code new feature
+    // donations 
     let donations = document.createElement("donations")
     donations.textContent = amount;
     (donation[charity] || 0) + amount;
-
+localStorage.setItem('donations', JSON.stringity(donations))
 
 })
 
 
-// new code new feature
