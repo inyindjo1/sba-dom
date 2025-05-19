@@ -12,6 +12,7 @@ function updateSummary() {
         const li = document.create[e]
         li.textContent = `${charity}: ${amount}`
         summaryList.appendChild(li)
+        console.log("First child text:", summaryList.firstChild.textContent)
     }
 }
 
@@ -35,6 +36,7 @@ localStorage.setItem('donations', JSON.stringity(donations))
 // amount code part 
 alert(`Thank you for donating $${amount} to ${charity}!`)
 updateSummary()
+form.rest ()
 })
 
 
