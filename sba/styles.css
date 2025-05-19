@@ -21,12 +21,12 @@ label {
 input {
     margin-top: 6px;
     width: 100%;
-    padding: 8px;
+    padding: 6px;
 }
 select {
     margin-top: 6px;
     width: 100%;
-    padding: 9px;
+    padding: 6px;
 }
 button {
     margin-top: 20px;
@@ -34,7 +34,7 @@ button {
 }
 ul {
     margin-top: 20px;
-    background-color: black;
+    background-color: rgb(234, 229, 229);
     padding: 10px;
     border-radius: 10px;
 }

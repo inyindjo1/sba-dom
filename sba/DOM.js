@@ -1,6 +1,6 @@
-const form = document.getElementById('donation-from')
+const form = document.getElementById('donation-form')
 const charitySelect = document.getElementById('charity')
-const amountInput = document.getElementById('amout')
+const amountInput = document.getElementById('amount')
 const summaryList = document.getElementById('donation-summary')
 const clearBtn = document.getElementById('ckear-btn')
 
@@ -19,7 +19,19 @@ form.addEventListener('submit',function (e) {
     e.preventDefault()
     const charity = charitySelect.value
     const amount = parseFloat( amountInput.value)
-    
+    let li = document.createElement("li")
+    li.textContent = amount
+    summaryList.appendChild(li)
+    if (! charity || isNaN(amount) || amount <= 0){
+        alert("please enter a valid charity and donation amount")
+        return;
+    }
+    // new code new feature
+    let donations = document.createElement("donations")
+    donations.textContent = amount;
+    (donation[charity] || 0) + amount;
+
+
 })
 
 
