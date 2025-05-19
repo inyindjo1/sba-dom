@@ -32,6 +32,9 @@ form.addEventListener('submit',function (e) {
     (donation[charity] || 0) + amount;
 localStorage.setItem('donations', JSON.stringity(donations))
 
+// amount code part 
+alert(`Thank you for donating $${amount} to ${charity}!`)
+updateSummary()
 })
 
 
