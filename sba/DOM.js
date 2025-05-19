@@ -1,7 +1,7 @@
 const form = document.getElementById('donation-form')
 const charitySelect = document.getElementById('charity')
 const amountInput = document.getElementById('amount')
-const summaryList = document.getElementById('donation-summary')
+const summaryList = document.querySelector('donation-summary')
 const clearBtn = document.getElementById('ckear-btn')
 
 let donation = localStorage.getItem('donation') || ''
