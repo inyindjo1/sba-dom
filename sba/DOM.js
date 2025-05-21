@@ -1,7 +1,7 @@
 const form = document.getElementById('donation-form')
 const charitySelect = document.getElementById('charity')
 const amountInput = document.getElementById('amount')
-const summaryList = document.querySelector('#donation-summary')
+const donation = document.querySelector('#donation-summary')
 const clearBtn = document.getElementById('clear-btn')
 
 
@@ -12,7 +12,7 @@ form.addEventListener('submit',function (e) {
     let li = document.createElement("li")
     li.textContent = "$ "+amount
     li.classList.add("donation-item")
-    summaryList.appendChild(li)
+    donation.appendChild(li)
     
     if (! charity || isNaN(amount) || amount <= 0){
         alert("please enter a valid charity and donation amount")
