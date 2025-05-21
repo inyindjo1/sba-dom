@@ -1,9 +1,10 @@
 const form = document.getElementById('donation-form')
 const charitySelect = document.getElementById('charity')
 const amountInput = document.getElementById('amount')
-const summaryList = document.querySelector('donation-summary')
-const clearBtn = document.getElementById('ckear-btn')
+const summaryList = document.querySelector('#donation-summary')
+const clearBtn = document.getElementById('clear-btn')
 
+console.log(clearBtn)
 let donation = localStorage.getItem('donation') || ''
 
 function updateSummary() {
@@ -31,19 +32,21 @@ form.addEventListener('submit',function (e) {
     let donations = document.createElement("donations")
     donations.textContent = amount;
     (donation[charity] || 0) + amount;
-localStorage.setItem('donations', JSON.stringity(donations))
+localStorage.setItem('donations', JSON.stringify(donations))
 
 // amount code part 
 alert(`Thank you for donating $${amount} to ${charity}!`)
 updateSummary()
 form.rest ()
 })
-clearBtn.addEventListener('click',function (){
-    if (confirm("Are you sure want to clear all donation ?")){
-        donations = {}
-        localStorage.removeItem('donations')
-        
+clearBtn.addEventListener('click', function () {
+    if (confirm("Are you sure you want to clear all donations?")) {
+        donation = {}
+        localStorage.removeItem('donations');
+        updateSummary()
     }
-}) 
+});
+
+// Initial summary load
 updateSummary()
 
