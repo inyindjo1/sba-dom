@@ -11,6 +11,7 @@ form.addEventListener('submit',function (e) {
     const amount = parseFloat( amountInput.value)
     let li = document.createElement("li")
     li.textContent = "$ "+amount
+    li.classList.add("donation-item")
     summaryList.appendChild(li)
     
     if (! charity || isNaN(amount) || amount <= 0){
