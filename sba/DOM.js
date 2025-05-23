@@ -11,7 +11,7 @@ form.addEventListener('submit',function (e) {
     const amount = parseFloat( amountInput.value)
     let li = document.createElement("li")
     li.textContent = "$ "+amount
-    li.classList.add("donation-item")
+    li.classList.add("donation-item", "highlight")
     donation.appendChild(li)
     
     if (! charity || isNaN(amount) || amount <= 0){
@@ -23,12 +23,21 @@ alert(`Thank you for donating $${amount.toFixed(2)} to ${charity}!`)
 form.reset ()
 })
 clearBtn.addEventListener('click', function () {
-    if (confirm("Are you sure you want to clear all donations?")) {
-        donation = {}
-        donation.length = 0
-        
+  if (confirm("Are you sure you want to clear all donations?")) {
+    const items = document.querySelectorAll('.donation-item') 
+
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.color = "red"
+      console.log("Parent node:", items[i].parentNode)
     }
-});
+
+    setTimeout(() => {
+      donation.textContent = ""
+    }, 50)
+  }
+})
+
+
 
 
 
