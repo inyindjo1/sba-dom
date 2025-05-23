@@ -23,19 +23,22 @@ alert(`Thank you for donating $${amount.toFixed(2)} to ${charity}!`)
 form.reset ()
 })
 clearBtn.addEventListener('click', function () {
-  if (confirm("Are you sure you want to clear all donations?")) {
-    const items = document.querySelectorAll('.donation-item') 
-
-    for (let i = 0; i < items.length; i++) {
-      items[i].style.color = "red"
-      console.log("Parent node:", items[i].parentNode)
+    if (confirm("Are you sure you want to clear all donations?")) {
+        const items = document.querySelectorAll ('donation-item')
+        items.forEach(item =>{
+            items.style.color ="red"
+            console.log("parent node",item.parentNode)
+            for (let i = 0; i < items.length; i++) {
+      items[i].style.color = "red" 
+      console.log("Parent node:", items[i].parentNode) 
     }
-
-    setTimeout(() => {
-      donation.textContent = ""
-    }, 50)
-  }
-})
+        })
+setTimeout(() => { 
+        donation.textContent= ""
+  
+    }, 150)
+}
+});
 
 
 
